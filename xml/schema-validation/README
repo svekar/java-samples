@@ -1,0 +1,14 @@
+A simple example of using the javax.xml.validation API to validate an XML document
+against one or more XSD schemas. 
+
+To build:
+
+$ mvn compile
+
+To run:
+$ java -classpath target/classes org.example.xml.validation.XmlValidator \
+	http://maven.apache.org/xsd/maven-4.0.0.xsd \
+	pom.xml
+
+This will produce no output on success, but an exception stack trace with XML 
+validation errors if the XML document is invalid.
