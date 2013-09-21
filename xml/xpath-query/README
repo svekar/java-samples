@@ -1,0 +1,12 @@
+Simple example of evaluating an XPath expression against an XML file using 
+the javax.xml.xpath API.
+
+To build:
+$ mvn compile
+
+To run:
+$ java -classpath target/classes org.example.xml.xpath.XPathEvaluator \
+	pom.xml "/p:project/p:version"
+Evaluatig '/p:project/p:version' against the file pom.xml produced: <version xmlns="http://maven.apache.org/POM/4.0.0">0.0.1-SNAPSHOT</version>
+
+	
