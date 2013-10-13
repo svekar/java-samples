@@ -1,0 +1,10 @@
+A simple example of a reusable object factory in Java, in style of 
+the Factory Method GOF pattern.
+
+To build this project:
+$ mvn package
+
+To run:
+$ mvn test
+This runs the JUnit tests explicitly (which is also included in the above step).
+
