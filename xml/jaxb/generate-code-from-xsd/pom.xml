@@ -29,12 +29,23 @@
 						<arg>-XtoString</arg>
 						<arg>-Xequals</arg>
 						<arg>-XhashCode</arg>
+						<arg>-Xfluent-builder</arg>
+						<!-- Workaround for issue #21 in jaxb2-rich-client: https://github.com/mklemm/jaxb2-rich-contract-plugin/issues/21 
+							Which is probably harmless since partial copies aren't needed (I don't even 
+							know what it is:)). -->
+						<arg>-copyPartial=n</arg>
+						<arg>-Ximmutable</arg>
 					</args>
 					<plugins>
 						<plugin>
 							<groupId>org.jvnet.jaxb2_commons</groupId>
 							<artifactId>jaxb2-basics</artifactId>
 							<version>${jaxb2_commons.version}</version>
+						</plugin>
+						<plugin>
+							<groupId>net.codesup.util</groupId>
+							<artifactId>jaxb2-rich-contract-plugin</artifactId>
+							<version>1.8.0</version>
 						</plugin>
 					</plugins>
 				</configuration>

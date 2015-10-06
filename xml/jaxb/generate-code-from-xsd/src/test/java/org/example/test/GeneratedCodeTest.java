@@ -62,7 +62,10 @@ public final class GeneratedCodeTest {
 			fn = fn.replaceAll("/|\\\\", ".").substring(1,
 					fn.length() - ".java".length());
 			Class<?> cls = Class.forName(fn);
-			assertThatClassOverridesMethods(cls);
+			// Skip interfaces, enums, and primitives.
+			if (cls.getSuperclass() != null) {
+				assertThatClassOverridesMethods(cls);
+			}
 		}
 	}
 
