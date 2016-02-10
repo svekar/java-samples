@@ -1,0 +1,22 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<context-param>
+		<param-name>ScheduleConfigurer.Task</param-name>
+		<param-value>org.example.timer.SimpleTimerTask</param-value>
+	</context-param>
+
+  <context-param>
+    <param-name>ScheduleConfigurer.interval</param-name>
+    <param-value>500</param-value>
+  </context-param>
+  
+	<listener>
+		<listener-class>org.example.servlet.listener.scheduler.ScheduleConfigurer</listener-class>
+	</listener>
+
+</web-app>
+
