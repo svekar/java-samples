@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.example</groupId>
 	<artifactId>simple-schedule-configurer</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>simple-schedule-configurer Maven Webapp</name>
 	<url>http://maven.apache.org</url>
