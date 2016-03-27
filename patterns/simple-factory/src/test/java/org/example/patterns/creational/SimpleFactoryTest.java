@@ -11,11 +11,9 @@ public class SimpleFactoryTest {
 
 	@Rule
 	public final Timeout defaultTimeout = new Timeout(1000);
-
-	@Test
-	public void testSimpleFactory() {
-		new SimpleFactory("whatever");
-	}
+	@Rule
+	public final ExpectedException expectedExc = ExpectedException.none();
+	
 
 	static interface Interface {
 	}
@@ -32,7 +30,7 @@ public class SimpleFactoryTest {
 		}
 	}
 
-	static enum Singleton implements Interface {
+	enum Singleton implements Interface {
 		INSTANCE;
 	}
 	
@@ -52,9 +50,6 @@ public class SimpleFactoryTest {
 		Interface result = factory.create();
 		assertNotNull(result);
 	}
-
-	@Rule
-	public final ExpectedException expectedExc = ExpectedException.none();
 
 	private static final class MySimpleFactory extends SimpleFactory {
 
