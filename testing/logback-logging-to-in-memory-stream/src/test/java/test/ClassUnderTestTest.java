@@ -51,7 +51,7 @@ public class ClassUnderTestTest {
 	private static OutputStreamAppender<ILoggingEvent> createOutputStreamAppender(
 		LoggerContext lc, ByteArrayOutputStream baos) {
 		OutputStreamAppender<ILoggingEvent> ca =
-				new OutputStreamAppender<ILoggingEvent>();
+				new OutputStreamAppender<>();
 		ca.setContext(lc);
 		ca.setName("stream");
 		PatternLayoutEncoder pl = createEncoder(lc);
