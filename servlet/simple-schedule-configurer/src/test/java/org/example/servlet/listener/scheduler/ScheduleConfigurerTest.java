@@ -28,6 +28,13 @@ public final class ScheduleConfigurerTest {
 			}
 		}
 
+		private static int resetCounter() {
+			int result = times;
+			synchronized (TimerTask.class) {
+				times = 0;
+			}			
+			return result;
+		}
 	}
 
 	private final ScheduleConfigurer instance;
@@ -58,7 +65,7 @@ public final class ScheduleConfigurerTest {
 	@After
 	public void stopTimer() {
 		instance.contextDestroyed(null);
-		TestTask.times = 0;
+		TestTask.resetCounter();
 	}
 
 	@Test
