@@ -27,7 +27,7 @@ public final class GeneratedCodeTest {
 	}
 
 	private static Collection<File> listFiles(File dir, File path) {
-		Set<File> fileTree = new HashSet<File>();
+		Set<File> fileTree = new HashSet<>();
 		for (File entry : dir.listFiles()) {
 			if (entry.isFile()) {
 				if (entry.getName().endsWith(".java")
