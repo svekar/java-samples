@@ -3,6 +3,9 @@ machine:
     version: oraclejdk8
 
 test:
+  override:
+    - mvn -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8 integration-test
+    
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
