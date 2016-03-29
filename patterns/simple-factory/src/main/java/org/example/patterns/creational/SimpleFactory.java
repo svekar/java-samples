@@ -25,8 +25,8 @@ import java.lang.reflect.Field;
  * 	Interface result = factory.create();
  * }
  * <p>
- * You can also subclass the factory in another class to hide the  
- * configuration details from your clients.
+ * You can also subclass the factory in another class to hide the configuration
+ * details from your clients.
  * 
  * @author Sven-Jørgen Karlsen <svenjok@gmail.com>
  * 
@@ -59,15 +59,15 @@ public class SimpleFactory {
 	 */
 	public final <T> T create() {
 		Class<?> cls;
-		String implClsName = System.getProperty(implClsProperty,
-				implClsProperty);
+		String implClsName =
+				System.getProperty(implClsProperty, implClsProperty);
 		try {
 			cls = (Class<?>) Class.forName(implClsName);
 		} catch (ClassNotFoundException e) {
 			throw new IllegalStateException(
-					String.format(
-							"Can't load class object for impl. class: %s",
-							implClsName), e);
+					String.format("Can't load class object for impl. class: %s",
+							implClsName),
+					e);
 		}
 		try {
 			Field field = findField(cls, "INSTANCE");
@@ -80,9 +80,7 @@ public class SimpleFactory {
 			@SuppressWarnings("unchecked")
 			T result = (T) resultObject;
 			return result;
-		} catch (Exception e) {
-			assert e instanceof InstantiationException
-					|| e instanceof IllegalAccessException;
+		} catch (InstantiationException | IllegalAccessException e) {
 			throw new IllegalArgumentException(String.format(
 					"Cant instantiate object of class: %s", implClsName), e);
 		}
