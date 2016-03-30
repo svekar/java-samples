@@ -26,16 +26,18 @@ import org.xml.sax.InputSource;
  * @author Sven-Jørgen Karlsen <svenjok@gmail.com>
  * 
  */
-public final class XPathEvaluator {
-
+public enum XPathEvaluator {
+	INSTANCE;
+	
 	/**
 	 * Simple namespace context for the Maven 4.0.0 schema. It binds the prefix
 	 * "p" to Maven's top-level schema URI.
 	 * 
 	 */
-	public static enum PomNamespaceContext implements NamespaceContext {
+	public enum PomNamespaceContext implements NamespaceContext {
 		INSTANCE;
 
+		@Override
 		public String getNamespaceURI(String prefix) {
 			if (prefix == null) {
 				throw new IllegalArgumentException("Prefix cannot be null.");
@@ -46,11 +48,13 @@ public final class XPathEvaluator {
 		}
 
 		// Not necessary yet.
+		@Override		
 		public String getPrefix(String namespaceURI) {
 			return null;
 		}
 		
 		// Not necessary yet.
+		@Override
 		@SuppressWarnings("rawtypes")
 		public Iterator getPrefixes(String namespaceURI) {
 			return null;
