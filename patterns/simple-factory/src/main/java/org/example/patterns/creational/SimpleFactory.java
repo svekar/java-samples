@@ -62,7 +62,7 @@ public class SimpleFactory {
 		String implClsName =
 				System.getProperty(implClsProperty, implClsProperty);
 		try {
-			cls = (Class<?>) Class.forName(implClsName);
+			cls = Class.forName(implClsName);
 		} catch (ClassNotFoundException e) {
 			throw new IllegalStateException(
 					String.format("Can't load class object for impl. class: %s",
