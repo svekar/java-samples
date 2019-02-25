@@ -7,6 +7,7 @@
 		<groupId>org.example</groupId>
 		<artifactId>java-samples</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../../../../java-samples/pom.xml</relativePath>
 	</parent>
 	<groupId>org.example</groupId>
 	<artifactId>generate-code-from-xsd</artifactId>
