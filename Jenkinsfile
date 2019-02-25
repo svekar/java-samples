@@ -16,11 +16,14 @@ pipeline {
     
     stage('Test') {
       steps {
-        sh 'mvn test'
+        sh 'mvn jacoco:prepare-agent test jacoco:report'
       }    
       post {
         always {
           junit '**/target/surefire-reports/*.xml'
+        }
+        success {
+          jacoco(execPattern: '**/target/jacoco.exec', changeBuildStatus: true)        
         }
       }
     }
