@@ -39,6 +39,14 @@
 					<artifactId>jacoco-maven-plugin</artifactId>
 					<version>0.8.3</version>
 				</plugin>
+				<plugin>
+					<groupId>org.owasp</groupId>
+					<artifactId>dependency-check-maven</artifactId>
+					<version>5.0.0-M1</version>
+					<configuration>
+						<failBuildOnCVSS>1</failBuildOnCVSS>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 
