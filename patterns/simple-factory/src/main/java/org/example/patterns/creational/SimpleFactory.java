@@ -95,7 +95,7 @@ public class SimpleFactory {
 	 *            Name of the field to find.
 	 * @return the field if found, otherwise <code>null</code>.
 	 */
-	private static final Field findField(Class<?> cls, String name) {
+	private static Field findField(Class<?> cls, String name) {
 		for (Field field : cls.getDeclaredFields()) {
 			if (field.getName().equals(name)) {
 				return field;

@@ -49,7 +49,7 @@ jobs:
         path: '**/target/checkstyle-result.xml'
         
     - name: Run PMD from Maven
-      run: mvn --batch-mode pmd:pmd pmd:cpd
+      run: mvn --batch-mode pmd:check pmd:cpd -DlinkXRef=false
       
     - name: Publish PMD reports
       uses: jwgmeligmeyling/pmd-github-action@master

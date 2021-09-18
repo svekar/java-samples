@@ -22,8 +22,7 @@ public class ScheduleConfigurer implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		String taskClassName =
 				sce.getServletContext().getInitParameter(TASK_CLASS_PARAMETER);
-		long interval = Long.valueOf(
-				sce.getServletContext().getInitParameter(INTERVAL_PARAMETER));
+		long interval = Long.parseLong(sce.getServletContext().getInitParameter(INTERVAL_PARAMETER));
 		TimerTask timerTask = createTimerTask(taskClassName);
 		timer.scheduleAtFixedRate(timerTask, 0, interval);
 	}
