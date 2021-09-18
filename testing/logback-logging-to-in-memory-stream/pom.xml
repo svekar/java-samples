@@ -6,28 +6,29 @@
 		<groupId>org.example</groupId>
 		<artifactId>java-samples</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../../pom.xml</relativePath>		
-	</parent>	
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
 	<groupId>org.example.logging</groupId>
 	<artifactId>logback-logging-to-in-memory-stream</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
 		</dependency>
 	</dependencies>
 
 	<build>
-	
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>

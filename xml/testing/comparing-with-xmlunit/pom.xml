@@ -11,17 +11,19 @@
 	</parent>
 	<groupId>org.example.xml.test</groupId>
 	<artifactId>comparing-with-xmlunit</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<artifactId>xmlunit</artifactId>
 			<groupId>xmlunit</groupId>

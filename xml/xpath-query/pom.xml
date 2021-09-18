@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>org.example.xml.xpath</groupId>
 	<artifactId>xpath-query</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>xpath-query</name>
 	<description>Simple example of an XPath query with javax.xml.xpath.</description>
 

@@ -11,7 +11,6 @@
 
 	<groupId>org.example.patterns.creational</groupId>
 	<artifactId>simple-factory</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>simple-factory</name>
 	<description>A simple, reuasable implementation of the factory method GOF pattern in Java.</description>
 
@@ -19,9 +18,12 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
-			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>
