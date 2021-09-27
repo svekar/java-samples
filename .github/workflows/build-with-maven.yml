@@ -41,7 +41,7 @@ jobs:
         path: '**/target/spotbugsXml.xml'
      
     - name: Run Checkstyle from Maven
-      run: mvn --batch-mode checkstyle:checkstyle
+      run: mvn --batch-mode  checkstyle:checkstyle -Dcheckstyle.config.location=google_checks.xml -Dcheckstyle.suppressions.location=./checkstyle-suppressions.xml
 
     - name: Publish Checkstyle report
       uses: jwgmeligmeyling/checkstyle-github-action@master

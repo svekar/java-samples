@@ -28,7 +28,7 @@ import java.lang.reflect.Field;
  * You can also subclass the factory in another class to hide the configuration
  * details from your clients.
  * 
- * @author Sven-Jørgen Karlsen <svenjok@gmail.com>
+ * @author Sven-Jørgen Karlsen
  * 
  */
 public class SimpleFactory {

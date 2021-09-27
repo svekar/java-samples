@@ -20,9 +20,10 @@ public class ScheduleConfigurer implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		String taskClassName =
-				sce.getServletContext().getInitParameter(TASK_CLASS_PARAMETER);
-		long interval = Long.parseLong(sce.getServletContext().getInitParameter(INTERVAL_PARAMETER));
+		String taskClassName = sce.getServletContext()
+				.getInitParameter(TASK_CLASS_PARAMETER);
+		long interval = Long.parseLong(
+				sce.getServletContext().getInitParameter(INTERVAL_PARAMETER));
 		TimerTask timerTask = createTimerTask(taskClassName);
 		timer.scheduleAtFixedRate(timerTask, 0, interval);
 	}
@@ -31,13 +32,13 @@ public class ScheduleConfigurer implements ServletContextListener {
 		try {
 			@SuppressWarnings("unchecked")
 			Class<? extends TimerTask> taskClass =
-					(Class<? extends TimerTask>) Class.forName(taskClassName);
+			(Class<? extends TimerTask>) Class.forName(taskClassName);
 			return taskClass.newInstance();
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException e) {
 			throw new IllegalStateException(
 					"Can't load or create timer task class: " + taskClassName
-							+ ".",
+					+ ".",
 					e);
 		}
 	}

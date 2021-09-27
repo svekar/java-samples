@@ -61,29 +61,26 @@ public class SimpleFactoryTest {
 	
 	@Test
 	public void testCreateFailureNoClassFound() {
-		SimpleFactory factory = new MySimpleFactory();
 		System.setProperty(Impl.class.getName(), "no.such.class.Impl");
 		expectedExc.expect(IllegalStateException.class);
 		expectedExc.expectMessage("Can't load class object for impl. class: ");
-		factory.create();
+		new MySimpleFactory().create();
 	}
 
 	@Test
 	public void testCreateAtIllegalAccessException() {
-		SimpleFactory factory = new SimpleFactory(Impl.class.getName());
 		System.setProperty(Impl.class.getName(), NonInstantiableImpl.class.getName());
 		expectedExc.expect(IllegalArgumentException.class);
 		expectedExc.expectMessage("Cant instantiate object of class: ");
-		factory.create();
+		new SimpleFactory(Impl.class.getName()).create();
 	}
 	
 	@Test
 	public void testCreateAtInstantiationException() {
-		SimpleFactory factory = new SimpleFactory(Impl.class.getName());
 		System.setProperty(Impl.class.getName(), SubInterface.class.getName());
 		expectedExc.expect(IllegalArgumentException.class);
 		expectedExc.expectMessage("Cant instantiate object of class: ");
-		factory.create();
+		new SimpleFactory(Impl.class.getName()).create();
 	}
 	
 	@Test
