@@ -20,7 +20,7 @@ jobs:
       run: find . -iname '*.xml'
 
     - name: Build with Maven
-      run: mvn --batch-mode --strict-checksums jacoco:prepare-agent verify jacoco:report jacoco:report-aggregate
+      run: mvn --batch-mode --strict-checksums jacoco:prepare-agent verify jacoco:report-aggregate
 
     - name: Add coverage to PR
       id: jacoco
