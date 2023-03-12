@@ -20,13 +20,13 @@ jobs:
       run: mvn --batch-mode --strict-checksums jacoco:prepare-agent verify jacoco:report-aggregate
 
     - name: List jacoco files
-      run: find . -iname '*.xml'
+      run: find . -iname 'jacoco.xml'
 
     - name: Add coverage to PR
       id: jacoco
       uses: madrapps/jacoco-report@main
       with:
-        paths: ${{ github.workspace }}/target/site/jacoco-aggregate/jacoco-aggregate.xml
+        paths: ${{ github.workspace }}/target/site/jacoco-aggregate/jacoco.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 80
         min-coverage-changed-files: 80
