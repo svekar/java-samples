@@ -16,6 +16,9 @@ jobs:
         distribution: 'zulu'
         cache: 'maven'
 
+    - name: List jacoco files
+      run: find . -iname 'jacoco.xml'
+
     - name: Build with Maven
       run: mvn --batch-mode --strict-checksums jacoco:prepare-agent verify jacoco:report jacoco:report-aggregate
 
@@ -23,7 +26,7 @@ jobs:
       id: jacoco
       uses: madrapps/jacoco-report@main
       with:
-        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+        paths: ${{ github.workspace }}/target/site/jacoco-aggregate/jacoco.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 80
         min-coverage-changed-files: 80
