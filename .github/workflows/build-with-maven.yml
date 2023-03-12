@@ -16,11 +16,11 @@ jobs:
         distribution: 'zulu'
         cache: 'maven'
 
-    - name: List jacoco files
-      run: find . -iname '*.xml'
-
     - name: Build with Maven
       run: mvn --batch-mode --strict-checksums jacoco:prepare-agent verify jacoco:report-aggregate
+
+    - name: List jacoco files
+      run: find . -iname '*.xml'
 
     - name: Add coverage to PR
       id: jacoco
