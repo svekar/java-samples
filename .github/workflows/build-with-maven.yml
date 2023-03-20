@@ -20,7 +20,7 @@ jobs:
       run: mvn --batch-mode --strict-checksums verify
 
     - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2.4.2
+      uses: EnricoMi/publish-unit-test-result-action@v2.6.0
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
