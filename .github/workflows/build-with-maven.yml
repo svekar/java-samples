@@ -21,7 +21,7 @@ jobs:
 
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2.4.2
-      if: ${{ github.actor != 'dependabot[bot]' }}
+      if: ${{ github.actor != 'dependabot[bot]' }}w
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         check_name: Unit Test Results
@@ -37,6 +37,7 @@ jobs:
 
     - name: Publish SpotBugs report
       uses: jwgmeligmeyling/spotbugs-github-action@master
+      if: ${{ github.actor != 'dependabot[bot]' }}      
       with:
         path: '**/target/spotbugsXml.xml'
      
@@ -44,6 +45,7 @@ jobs:
       run: mvn --batch-mode  checkstyle:checkstyle -Dcheckstyle.config.location=google_checks.xml -Dcheckstyle.suppressions.location=./checkstyle-suppressions.xml
 
     - name: Publish Checkstyle report
+      if: ${{ github.actor != 'dependabot[bot]' }}    
       uses: jwgmeligmeyling/checkstyle-github-action@master
       with:
         path: '**/target/checkstyle-result.xml'
@@ -52,6 +54,7 @@ jobs:
       run: mvn --batch-mode pmd:check pmd:cpd -DlinkXRef=false
       
     - name: Publish PMD reports
+      if: ${{ github.actor != 'dependabot[bot]' }}    
       uses: jwgmeligmeyling/pmd-github-action@master
       with:
         path: '**/target/??d.xml'
