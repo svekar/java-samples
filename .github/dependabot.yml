@@ -1,5 +1,8 @@
 version: 2
 updates:
+ - ignore:
+      - dependency-name: '*'
+        update-types: ["version-update:semver-patch"]
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
