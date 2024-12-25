@@ -44,7 +44,7 @@
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
-				<version>1.5.7</version>
+				<version>1.5.13</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.xml.bind</groupId>
@@ -113,11 +113,10 @@
 					</dependencies>
 					<configuration>
 						<rules>
-							<banVulnerable
-								implementation="org.sonatype.ossindex.maven.enforcer.BanVulnerableDependencies" />
-							<banDuplicatePomDependencyVersions />
-							<dependencyConvergence />
-							<reactorModuleConvergence />
+							<banVulnerable implementation="org.sonatype.ossindex.maven.enforcer.BanVulnerableDependencies"/>
+							<banDuplicatePomDependencyVersions/>
+							<dependencyConvergence/>
+							<reactorModuleConvergence/>
 						</rules>
 					</configuration>
 					<executions>
