@@ -62,7 +62,7 @@ jobs:
     #    uses a compiled language
 
     - name: Build with Maven
-      run: mvn package --batch-mode --strict-checksums verify -DskipTests -Dfindbugs.skip -Dcheckstyle.skip -Dpmd.skip=true -Dspotbugs.skip -Dmaven.javadoc.skip
+      run: mvn verify --batch-mode --strict-checksums -DskipTests -Dfindbugs.skip -Dcheckstyle.skip -Dpmd.skip=true -Dspotbugs.skip -Dmaven.javadoc.skip
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
