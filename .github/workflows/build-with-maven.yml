@@ -54,7 +54,6 @@ jobs:
       run: mvn --batch-mode pmd:check pmd:cpd -DlinkXRef=false
       
     - name: Publish PMD reports
-      if: ${{ github.actor != 'dependabot[bot]' }}    
-      uses: jwgmeligmeyling/pmd-github-action@e437795e6760134d4f306df4ab35edf298a42d70 # master
+      uses: pmd/pmd-github-action@e437795e6760134d4f306df4ab35edf298a42d70 # master
       with:
         path: '**/target/??d.xml'
