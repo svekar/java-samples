@@ -24,7 +24,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.release>11</maven.compiler.release>
 		<jaxb.version>2.3.1</jaxb.version>
-		<jaxb.rt.version>2.4.0-b180830.0438</jaxb.rt.version>
+		<jaxb.rt.version>4.0.9</jaxb.rt.version>
 	</properties>
 
 	<dependencyManagement>
