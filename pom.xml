@@ -108,7 +108,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.6.2</version>
+					<version>3.7.0</version>
 					<dependencies>
 						<dependency>
 							<groupId>org.sonatype.ossindex.maven</groupId>
